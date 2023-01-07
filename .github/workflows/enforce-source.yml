@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Enforce-source-branch
-      if: ${{ 'github.head_ref' != 'feature-1' }}
+      if: ${{ github.head_ref != 'feature-1' }}
       run: |
         echo "::error:: Only PR from source branch 'feature-1' is accepted."
         exit 1
