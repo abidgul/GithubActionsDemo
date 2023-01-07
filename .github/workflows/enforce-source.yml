@@ -4,12 +4,12 @@ on:
     branches:
       - workflow-setup
 jobs:
-  info:
+  enforce-source-branch:
     runs-on: windows-2022
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: enforce-source-branch
+    - name: Enforce-source-branch
       if: ${{ 'feature-1' == 'feature-1' }}
       run: |
         echo "::error:: Only PR from source branch 'feature-1' is accepted"
