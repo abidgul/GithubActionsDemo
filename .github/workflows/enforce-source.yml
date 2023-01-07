@@ -1,0 +1,14 @@
+name: Event Info
+on:
+  push:
+    branches:
+      - workflow-setup
+jobs:
+  info:
+    runs-on: windows-2022
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: enforce-source-branch
+      if: ${{ 'feature-1' != 'feature-1' }}
+      run: core.setFailed('Onlt PR from source branch "feature-1" is accepted')
