@@ -1,0 +1,18 @@
+name: Enforce source branch for PR
+on:
+  pull_request:
+    branches:
+      - workflow-setup
+jobs:
+  enforce-source-branch:
+    runs-on: windows-2022
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Enforce-source-branch
+      if: ${{ github.head_ref != 'feature-1' }}
+      run: |
+        echo "::error:: Only PR from source branch 'feature-1' is accepted."
+        exit 1
+    -  run: |
+        echo "Status check for PR '${{ github.event.pull_request.number }}'' from source '${{ github.head_ref }}'' succeeded."
