@@ -14,5 +14,5 @@ jobs:
       run: |
         echo "::error:: Only PR from source branch 'feature-1' is accepted"
         exit 1
-      run: |
+    -  run: |
         echo "Succeeded"
