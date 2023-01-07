@@ -11,4 +11,6 @@ jobs:
       uses: actions/checkout@v2
     - name: enforce-source-branch
       if: ${{ 'feature-1' == 'feature-1' }}
-      run: core.setFailed('Onlt PR from source branch "feature-1" is accepted')
+      run: |
+        echo "::error:: Only PR from source branch "feature-1" is accepted"
+        exit 1
