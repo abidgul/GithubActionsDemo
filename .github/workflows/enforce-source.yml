@@ -1,4 +1,4 @@
-name: Event Info
+name: Enforce source branch for PR
 on:
   push:
     branches:
