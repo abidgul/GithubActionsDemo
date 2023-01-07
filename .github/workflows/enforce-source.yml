@@ -12,5 +12,7 @@ jobs:
     - name: enforce-source-branch
       if: ${{ 'feature-1' == 'feature-1' }}
       run: |
-        echo "::error:: Only PR from source branch "feature-1" is accepted"
+        echo "::error:: Only PR from source branch 'feature-1' is accepted"
         exit 1
+      run: |
+        echo "Succeeded"
